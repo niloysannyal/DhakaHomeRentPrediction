@@ -1,5 +1,5 @@
 ![Screenshot (166)](https://github.com/user-attachments/assets/f03f1fb6-fb2d-454b-bd22-b8a6a01de7d1)
-This data science project series walks through step by step process of how to build a real estate price prediction website. We will first build a model using sklearn and linear regression using Dhaka home rent dataset from kaggle.com. Second step would be to write a python flask server that uses the saved model to serve http requests. Third component is the website built in html, css and javascript that allows user to enter home square ft area, bedrooms etc and it will call python flask server to retrieve the predicted price.
+This data science project is built with step by step process of how to build a real estate price prediction website. I built a model using sklearn and Random Forest Regressor using Dhaka home rent dataset from kaggle.com. Second step was to write a python flask server that uses the saved model to serve http requests. Third component was the website built in html, css and javascript that allows user to enter home square ft area, bedrooms etc and it will call python flask server to retrieve the predicted price.
 
 During model building I covered almost all data science concepts such as:
 
