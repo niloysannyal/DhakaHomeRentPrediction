@@ -3,12 +3,12 @@ This data science project series walks through step by step process of how to bu
 
 During model building I covered almost all data science concepts such as:
 
-- data load and cleaning
-- outlier detection and removal
-- feature engineering
-- dimensionality reduction
-- gridsearchcv for hyperparameter tunning
-- k fold cross validation etc.
+- Data load and cleaning
+- Outlier detection and removal
+- Feature engineering
+- Dimensionality reduction
+- Gridsearchcv for hyperparameter tunning
+- K fold cross validation etc.
 
 Technology and tools wise this project covers:
 
