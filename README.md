@@ -10,6 +10,12 @@ During model building I covered almost all data science concepts such as:
 - Gridsearchcv for hyperparameter tunning
 - K fold cross validation etc.
 
+Here is the folder structure:
+
+- client : This contains ui website code
+- server: Python flask server
+- model: Contains datafile and python notebook for model building and generated models and artifacts
+
 Technology and tools wise this project covers:
 
 1. Python
