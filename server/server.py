@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask import send_from_directory
-from server import util
+from . import util
 import os
 
 app = Flask(__name__, static_folder="../client", template_folder="../client")
