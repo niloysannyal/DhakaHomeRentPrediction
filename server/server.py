@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask import send_from_directory
-from . import util
+from server import util
 import os
 
 client_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../client'))
