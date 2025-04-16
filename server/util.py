@@ -1,5 +1,6 @@
 import json
 import pickle
+import joblib
 import numpy as np
 import pandas as pd
 
@@ -39,8 +40,7 @@ def load_saved_artifacts():
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    with open("./artifacts/DhakaHomeRentPrediction.pkl", "rb") as f:
-        __model = pickle.load(f)
+    __model = joblib.load("./artifacts/DhakaHomeRentPrediction.pkl")
 
     print("Loading saved artifacts...Done")
 
