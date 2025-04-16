@@ -26,7 +26,7 @@ function onClickedEstimatePrice() {
   var location = document.getElementById("uiLocations");
   var estPrice = document.getElementById("uiEstimatedRent");
 
-  var url = "http://127.0.0.1:5000/predict_home_rent";
+  var url = "https://dhakahomerentprediction.onrender.com/predict_home_rent";
 
   $.post(url, {
       Area_sqft: parseFloat(sqft.value),
@@ -43,7 +43,7 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  var url = "http://127.0.0.1:5000/get_location_names";
+  var url = "https://dhakahomerentprediction.onrender.com/get_location_names";
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
