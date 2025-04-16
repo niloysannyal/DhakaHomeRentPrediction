@@ -1,6 +1,5 @@
 import os
 import json
-import pickle
 import joblib
 import numpy as np
 import pandas as pd
@@ -36,20 +35,26 @@ def get_location_names():
 
 def load_saved_artifacts():
     print("Loading saved artifacts...Start")
-    
+
     global __locations, __data_columns, __model
-    
-    base_path = os.path.dirname(__file__)
+
+    # Resolve absolute path to artifacts folder
+    base_path = os.path.abspath(os.path.dirname(__file__))
     artifacts_path = os.path.join(base_path, 'artifacts')
-    
-    with open(os.path.join(artifacts_path, "columns.json"), "r") as f:
+
+    # Load columns.json
+    columns_file_path = os.path.join(artifacts_path, "columns.json")
+    with open(columns_file_path, "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    __model = joblib.load(os.path.join(artifacts_path, "DhakaHomeRentPrediction.pkl"))
+    # Load the trained model
+    model_file_path = os.path.join(artifacts_path, "DhakaHomeRentPrediction.pkl")
+    __model = joblib.load(model_file_path)
 
     print("Loading saved artifacts...Done")
 
 if __name__ == '__main__':
     load_saved_artifacts()
     print(get_location_names())
+
