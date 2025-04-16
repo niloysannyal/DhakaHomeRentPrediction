@@ -3,6 +3,8 @@ from flask import send_from_directory
 from server import util
 import os
 
+util.load_saved_artifacts()
+
 client_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../client'))
 app = Flask(__name__, static_folder=client_path, template_folder=client_path)
 
@@ -38,5 +40,4 @@ def predict_home_rent():
 
 if __name__ == '__main__':
     print("Starting Python Flask Server For House Rent Prediction...")
-    util.load_saved_artifacts()
     app.run()
