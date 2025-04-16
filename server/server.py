@@ -1,6 +1,17 @@
 from flask import Flask, request, jsonify
-import util
-app = Flask(__name__)
+from flask import send_from_directory
+from server import util
+import os
+
+app = Flask(__name__, static_folder="../client", template_folder="../client")
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.static_folder), filename)
+
+@app.route('/')
+def home():
+    return app.send_static_file("app.html")
 
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
@@ -27,4 +38,4 @@ def predict_home_rent():
 if __name__ == '__main__':
     print("Starting Python Flask Server For House Rent Prediction...")
     util.load_saved_artifacts()
-    app.run(debug=True)
+    app.run()
