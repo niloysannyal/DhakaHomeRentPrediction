@@ -3,7 +3,8 @@ from flask import send_from_directory
 from . import util
 import os
 
-app = Flask(__name__, static_folder="../client", template_folder="../client")
+client_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../client'))
+app = Flask(__name__, static_folder=client_path, template_folder=client_path)
 
 @app.route('/static/<path:filename>')
 def serve_static(filename):
