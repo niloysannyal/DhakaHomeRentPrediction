@@ -3,6 +3,8 @@ from flask import send_from_directory
 from server import util
 import os
 
+location_names = util.get_location_names()
+
 client_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../client'))
 app = Flask(__name__, static_folder=client_path, template_folder=client_path)
 
@@ -17,7 +19,7 @@ def home():
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
     response = jsonify({
-        'Locations': util.get_location_names()
+        'Locations': location_names
     })
     print(response)
     response.headers.add('Access-Control-Allow-Origin', '*')
