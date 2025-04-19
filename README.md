@@ -1,6 +1,7 @@
 [![Live](https://img.shields.io/badge/LIVE-VISIT%20NOW-red?style=for-the-badge&logo=firefox)](https://dhakahomerentprediction.onrender.com/)
 
-![Screenshot (166)](https://github.com/user-attachments/assets/f03f1fb6-fb2d-454b-bd22-b8a6a01de7d1)
+![Screenshot (172)](https://github.com/user-attachments/assets/fddee532-1dce-4b73-aa0d-bae7ab01b76f)
+
 This data science project is built with step by step process of how to build a real estate rent prediction website. I built a model using sklearn and Random Forest Regressor using Dhaka home rent dataset from kaggle.com. Second step was to write a python flask server that uses the saved model to serve http requests. Third component was the website built in html, css and javascript that allows user to enter home square ft area, bedrooms etc and it will call python flask server to retrieve the predicted price.
 
 During model building I covered almost all data science concepts such as:
