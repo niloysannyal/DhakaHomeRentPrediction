@@ -8,7 +8,14 @@ __locations = None
 __data_columns = None
 __model = None
 
+def ensure_model_loaded():
+    global __model, __locations, __data_columns
+    if __model is None or __locations is None or __data_columns is None:
+        load_saved_artifacts()
+
+
 def get_estimated_rent(Location, Area_sqft, Bed, Bath):
+    ensure_model_loaded()
     try:
         loc_index = __data_columns.index(Location)
     except ValueError:
@@ -31,6 +38,7 @@ def get_estimated_rent(Location, Area_sqft, Bed, Bath):
     return round(__model.predict(input_df)[0], 2)
 
 def get_location_names():
+    ensure_model_loaded()
     return __locations
 
 def load_saved_artifacts():
